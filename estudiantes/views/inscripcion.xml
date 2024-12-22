@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+
+        <record id="inscripcion_form_view" model="ir.ui.view">
+            <field name='name'>inscripcion.form.view</field>
+            <field name='model'>estudiantes.inscripcion</field>
+            <field name='arch' type="xml">
+                <form  groups="estudiantes.group_estudiantes_user">
+                    <group>
+                        <field name="alumno_id" />
+                        <field name="programa_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="inscripcion_action" model="ir.actions.act_window">
+            <field name="name">Inscripciones</field>
+            <field name="res_model">estudiantes.inscripcion</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <menuitem id="menu_inscripciones" name="Inscripciones" parent="menu_root" action="inscripcion_action"/>
+        
+    </data>
+</odoo>

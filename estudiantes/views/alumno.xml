@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+
+        <record id="estudiante_form_view" model="ir.ui.view">
+            <field name='name'>estudiante.form.view</field>
+            <field name='model'>estudiantes.alumno</field>
+            <field name='arch' type="xml">
+                <form  groups="estudiantes.group_estudiantes_user">
+                    <group>
+                        <field name="nombre"/>
+                        <field name="apellido"/>
+                        <field name="fecha_nacimiento"/>
+                        <field name="nro_legajo"/>
+                        <field name="email"/>
+                        <field name="telefono"/>
+                        <field name="direccion"/>
+                        <field name="pais_id"/>       
+                    </group>          
+                </form>
+            </field>
+        </record>
+
+        <record id="estudiante_action" model="ir.actions.act_window">
+            <field name="name">Alumnos</field>
+            <field name="res_model">estudiantes.alumno</field>
+            <field name="view_mode">form</field>
+        </record>
+
+
+
+
+        <menuitem id="menu_root" name="estudiantes"/>
+        <menuitem id="menu_estudiantes" name="nuevo alumno" parent="menu_root" action="estudiante_action"/>
+        
+    </data>
+</odoo>
+

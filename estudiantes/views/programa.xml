@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+
+        <record id="programa_form_view" model="ir.ui.view">
+            <field name='name'>programa.form.view</field>
+            <field name='model'>estudiantes.programa</field>
+            <field name='arch' type="xml">
+                <form  groups="estudiantes.group_estudiantes_user">
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="programa_action" model="ir.actions.act_window">
+            <field name="name">Programas</field>
+            <field name="res_model">estudiantes.programa</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <menuitem id="menu_programas" name="Programas" parent="menu_root" action="programa_action"/>
+        
+    </data>
+</odoo>

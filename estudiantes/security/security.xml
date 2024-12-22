@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Definir el grupo -->
+    <record id="group_estudiantes_user" model="res.groups">
+        <field name="name">Estudiantes User</field>
+        <field name="category_id" ref="base.group_user"/>
+    </record>
+
+    <!-- Definir los accesos -->
+    <record id="access_alumno_user" model="ir.model.access">
+        <field name="name">access_alumno_user</field>
+        <field name="model_id" ref="model_estudiantes_alumno"/>
+        <field name="group_id" ref="group_estudiantes_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+
+    <record id="access_programa_user" model="ir.model.access">
+        <field name="name">access_programa_user</field>
+        <field name="model_id" ref="model_estudiantes_programa"/>
+        <field name="group_id" ref="group_estudiantes_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+
+    <record id="access_inscripcion_user" model="ir.model.access">
+        <field name="name">access_inscripcion_user</field>
+        <field name="model_id" ref="model_estudiantes_inscripcion"/>
+        <field name="group_id" ref="group_estudiantes_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+</odoo>
